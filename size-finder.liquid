@@ -51,10 +51,45 @@
     <div class="navbuttons">
       <div class="next"><input type="button" class="btn button-next" name="next" value="Next" /></div>
       <div class="previous"><input type="button" class="btn button-previous" name="previous" value="Previous" /></div>
+      <div class="finish" style="display:none;"><input type="button" class="btn button-finish" name="finish" value="Close" data-action="close-modal" /></div>
     </div>
   </div>
 </div>
 <style>
+@media screen and (min-width: 1008px){
+  .pro-add-info li {
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+    text-transform: uppercase;
+    position: relative;
+    margin: 0 0 30px;
+  }
+  #codehouse-customizer .swatch-container {
+    display: block;
+    width: 33.3333%;
+    float: left;
+    padding: 0 20px;
+    text-align: center;
+  }
+}
+@media (max-width: 991px) {
+ .pro-add-info li {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    text-transform: uppercase;
+    position: relative;
+    margin: 0 0 30px;
+  }
+  #codehouse-customizer .swatch-container {
+    display: block;
+    width: 33.3333%;
+    float: left;
+    padding: 0 6px;
+    text-align: center;
+  }
+}
 ul.pro-add-info {
   display: flex;
   flex-wrap: wrap;
@@ -98,10 +133,10 @@ ul.pro-add-info a {
   margin: 20px 0;display: inline-block;width: 100%;
 }
 #codehouse-customizer .progress-bar {
-  background-color: #98999a;
+  background-color: #353535;
 }
 #codehouse-customizer .navbuttons .btn {
-  background: #98999a;color: #fff;outline: 0;
+  background: #fff;color: #000;outline: 0;
 }
 #codehouse-customizer .next{
   float:right;
@@ -116,11 +151,13 @@ ul.pro-add-info a {
   background-color: #353535;text-decoration: blink;
 }
 #codehouse-customizer ul li.active a {
-  background-color: #98999a;
+  background-color: #ffffff;
+  color: #000;
 }
 #codehouse-customizer .navbuttons .btn.disabled {
   background: #353535;
-  opacity: 1;
+  opacity: 0.5;
+  color: #fff;
 }
 #codehouse-customizer .tab-content input[type=text] {
   background-color: transparent;
@@ -145,7 +182,7 @@ ul.pro-add-info a {
   text-align: center;padding: 10px 0;
 }
 #codehouse-customizer .swatch-container.active img {
-  outline: solid 5px #98999a;
+  outline: solid 5px #fff;
 }
 #codehouse-customizer .success-msg {
   color: #ffffff;
@@ -164,5 +201,8 @@ ul.pro-add-info a {
 span.mysize {
     font-weight: 600;
     color: #1ccc11;
+}
+.navbuttons .finish {
+    text-align: center;
 }
 </style>
