@@ -9,7 +9,7 @@ $(document).ready(function() {
   });
   $('#codehouse-customizer').bootstrapWizard({'nextSelector': '.button-next', 'previousSelector': '.button-previous', 'onTabShow': function(tab, navigation, index) {
     var $total = navigation.find('li').length;var $current = index+1; var $percent = ($current/$total) * 100;var $current = index+1;
-    //if($total == $current){$('#codehouse-customizer .result').slideDown(300);}else{$('#codehouse-customizer .result').slideUp('fast');}
+    if($total == $current){$('#codehouse-customizer .navbuttons .next, #codehouse-customizer .navbuttons .previous').hide();$('#codehouse-customizer .navbuttons .finish').show();}else{$('#codehouse-customizer .navbuttons .finish').hide();}
     $('#codehouse-customizer .progress-bar').css({width:$percent+'%'});
     if ($(window).width() > 739){ }else{ $('html,body').animate({scrollTop: $("#codehouse-customizer").offset().top}, 'slow');}
   } });
@@ -23,48 +23,22 @@ $(document).ready(function() {
     var height = $('input#input-type-height').val();
     var shape = $('input[name=shape]:checked').val();
     console.log(weight); console.log(height); console.log(shape);
-    if ((weight >= 53 && weight <= 60) && (height >= 170 && height <= 182) && (shape == 'Smigre')) {
-      $('.success-msg').text('Str 44 S').show();$('.error-msg').hide();$.cookie('mysize', $('.success-msg').text(), { expires : 7 });$('.mysize').text($.cookie("mysize"));
-    } else if ((weight >= 53 && weight <= 60) && (height >= 170 && height <= 182) && (shape == 'Gennemsnit / Jeg ved det ikke')) {
-      $('.success-msg').text('Str 44 G').show();$('.error-msg').hide();$.cookie('mysize', $('.success-msg').text(), { expires : 7 });$('.mysize').text($.cookie("mysize"));
-    } else if ((weight >= 53 && weight <= 60) && (height >= 170 && height <= 182) && (shape == 'Rundere')) {
-      $('.success-msg').text('Str 44 R').show();$('.error-msg').hide();$.cookie('mysize', $('.success-msg').text(), { expires : 7 });$('.mysize').text($.cookie("mysize"));
-    } else if ((weight >= 61 && weight <= 71) && (height >= 171 && height <= 185) && (shape == 'Smigre')) {
-      $('.success-msg').text('Str 46 S').show();$('.error-msg').hide();$.cookie('mysize', $('.success-msg').text(), { expires : 7 });$('.mysize').text($.cookie("mysize"));
-    } else if ((weight >= 61 && weight <= 71) && (height >= 171 && height <= 185) && (shape == 'Gennemsnit / Jeg ved det ikke')) {
-      $('.success-msg').text('Str 46 G').show();$('.error-msg').hide();$.cookie('mysize', $('.success-msg').text(), { expires : 7 });$('.mysize').text($.cookie("mysize"));
-    } else if ((weight >= 61 && weight <= 71) && (height >= 171 && height <= 185) && (shape == 'Rundere')) {
-      $('.success-msg').text('Str 46 R').show();$('.error-msg').hide();$.cookie('mysize', $('.success-msg').text(), { expires : 7 });$('.mysize').text($.cookie("mysize"));
-    } else if ((weight >= 68 && weight <= 75) && (height >= 172 && height <= 187) && (shape == 'Smigre')) {
-      $('.success-msg').text('Str 48 S').show();$('.error-msg').hide();$.cookie('mysize', $('.success-msg').text(), { expires : 7 });$('.mysize').text($.cookie("mysize"));
-    } else if ((weight >= 68 && weight <= 75) && (height >= 172 && height <= 187) && (shape == 'Gennemsnit / Jeg ved det ikke')) {
-      $('.success-msg').text('Str 48 G').show();$('.error-msg').hide();$.cookie('mysize', $('.success-msg').text(), { expires : 7 });$('.mysize').text($.cookie("mysize"));
-    } else if ((weight >= 68 && weight <= 75) && (height >= 172 && height <= 187) && (shape == 'Rundere')) {
-      $('.success-msg').text('Str 48 R').show();$('.error-msg').hide();$.cookie('mysize', $('.success-msg').text(), { expires : 7 });$('.mysize').text($.cookie("mysize"));
-    } else if ((weight >= 71 && weight <= 85) && (height >= 173 && height <= 191) && (shape == 'Smigre')) {
-      $('.success-msg').text('Str 50 S').show();$('.error-msg').hide();$.cookie('mysize', $('.success-msg').text(), { expires : 7 });$('.mysize').text($.cookie("mysize"));
-    } else if ((weight >= 71 && weight <= 85) && (height >= 173 && height <= 191) && (shape == 'Gennemsnit / Jeg ved det ikke')) {
-      $('.success-msg').text('Str 50 G').show();$('.error-msg').hide();$.cookie('mysize', $('.success-msg').text(), { expires : 7 });$('.mysize').text($.cookie("mysize"));
-    } else if ((weight >= 71 && weight <= 85) && (height >= 173 && height <= 191) && (shape == 'Rundere')) {
-      $('.success-msg').text('Str 50 R').show();$('.error-msg').hide();$.cookie('mysize', $('.success-msg').text(), { expires : 7 });$('.mysize').text($.cookie("mysize"));
-    } else if ((weight >= 78 && weight <= 88) && (height >= 174 && height <= 194) && (shape == 'Smigre')) {
-      $('.success-msg').text('Str 52 S').show();$('.error-msg').hide();$.cookie('mysize', $('.success-msg').text(), { expires : 7 });$('.mysize').text($.cookie("mysize"));
-    } else if ((weight >= 78 && weight <= 88) && (height >= 174 && height <= 194) && (shape == 'Gennemsnit / Jeg ved det ikke')) {
-      $('.success-msg').text('Str 52 G').show();$('.error-msg').hide();$.cookie('mysize', $('.success-msg').text(), { expires : 7 });$('.mysize').text($.cookie("mysize"));
-    } else if ((weight >= 78 && weight <= 88) && (height >= 174 && height <= 194) && (shape == 'Rundere')) {
-      $('.success-msg').text('Str 52 R').show();$('.error-msg').hide();$.cookie('mysize', $('.success-msg').text(), { expires : 7 });$('.mysize').text($.cookie("mysize"));
-    } else if ((weight >= 81 && weight <= 94) && (height >= 175 && height <= 194) && (shape == 'Smigre')) {
-      $('.success-msg').text('Str 54 S').show();$('.error-msg').hide();$.cookie('mysize', $('.success-msg').text(), { expires : 7 });$('.mysize').text($.cookie("mysize"));
-    } else if ((weight >= 81 && weight <= 94) && (height >= 175 && height <= 194) && (shape == 'Gennemsnit / Jeg ved det ikke')) {
-      $('.success-msg').text('Str 54 G').show();$('.error-msg').hide();$.cookie('mysize', $('.success-msg').text(), { expires : 7 });$('.mysize').text($.cookie("mysize"));
-    } else if ((weight >= 81 && weight <= 94) && (height >= 175 && height <= 194) && (shape == 'Rundere')) {
-      $('.success-msg').text('Str 54 R').show();$('.error-msg').hide();$.cookie('mysize', $('.success-msg').text(), { expires : 7 });$('.mysize').text($.cookie("mysize"));
-    } else if ((weight >= 91 && weight <= 96) && (height >= 176 && height <= 194) && (shape == 'Smigre')) {
-      $('.success-msg').text('Str 56 S').show();$('.error-msg').hide();$.cookie('mysize', $('.success-msg').text(), { expires : 7 });$('.mysize').text($.cookie("mysize"));
-    } else if ((weight >= 91 && weight <= 96) && (height >= 176 && height <= 194) && (shape == 'Gennemsnit / Jeg ved det ikke')) {
-      $('.success-msg').text('Str 56 G').show();$('.error-msg').hide();$.cookie('mysize', $('.success-msg').text(), { expires : 7 });$('.mysize').text($.cookie("mysize"));
-    } else if ((weight >= 91 && weight <= 96) && (height >= 176 && height <= 194) && (shape == 'Rundere')) {
-      $('.success-msg').text('Str 56 R').show();$('.error-msg').hide();$.cookie('mysize', $('.success-msg').text(), { expires : 7 });$('.mysize').text($.cookie("mysize"));
+    if ((weight >= 50 && weight <= 54) && (height >= 170 && height <= 195) || (weight >= 55 && weight <= 59) && (height >= 176 && height <= 180) || (weight >= 55 && weight <= 59) && (height >= 186 && height <= 190) || (weight >= 55 && weight <= 59) && (height >= 191 && height <= 195)) {
+      $('.success-msg').text('Str 44').show();$('.error-msg').hide();$.cookie('mysize', $('.success-msg').text(), { expires : 7 });$('.mysize').text($.cookie("mysize"));
+    } else if ((weight >= 50 && weight <= 54) && (height >= 196 && height <= 200) || (weight >= 55 && weight <= 59) && (height >= 170 && height <= 175) || (weight >= 55 && weight <= 59) && (height >= 181 && height <= 185) || (weight >= 55 && weight <= 59) && (height >= 196 && height <= 200) || (weight >= 60 && weight <= 60) && (height >= 170 && height <= 200) || (weight >= 65 && weight <= 69) && (height >= 176 && height <= 190)) {
+      $('.success-msg').text('Str 46').show();$('.error-msg').hide();$.cookie('mysize', $('.success-msg').text(), { expires : 7 });$('.mysize').text($.cookie("mysize"));
+    } else if ((weight >= 65 && weight <= 69) && (height >= 170 && height <= 175) || (weight >= 65 && weight <= 69) && (height >= 191 && height <= 200) || (weight >= 70 && weight <= 74) && (height >= 191 && height <= 200)) {
+      $('.success-msg').text('Str 48').show();$('.error-msg').hide();$.cookie('mysize', $('.success-msg').text(), { expires : 7 });$('.mysize').text($.cookie("mysize"));
+    } else if ((weight >= 70 && weight <= 74) && (height >= 170 && height <= 180) || (weight >= 75 && weight <= 79) && (height >= 181 && height <= 200) || (weight >= 80 && weight <= 84) && (height >= 196 && height <= 200)) {
+      $('.success-msg').text('Str 50').show();$('.error-msg').hide();$.cookie('mysize', $('.success-msg').text(), { expires : 7 });$('.mysize').text($.cookie("mysize"));
+    } else if ((weight >= 70 && weight <= 74) && (height >= 181 && height <= 190)) {
+      $('.success-msg').text('Str 48/50').show();$('.error-msg').hide();$.cookie('mysize', $('.success-msg').text(), { expires : 7 });$('.mysize').text($.cookie("mysize"));
+    } else if ((weight >= 75 && weight <= 79) && (height >= 170 && height <= 180) || (weight >= 80 && weight <= 84) && (height >= 170 && height <= 195) || (weight >= 85 && weight <= 89) && (height >= 176 && height <= 200)) {
+      $('.success-msg').text('Str 52').show();$('.error-msg').hide();$.cookie('mysize', $('.success-msg').text(), { expires : 7 });$('.mysize').text($.cookie("mysize"));
+    } else if ((weight >= 85 && weight <= 89) && (height >= 170 && height <= 175) || (weight >= 90 && weight <= 94) && (height >= 176 && height <= 200) || (weight >= 95 && weight <= 99) && (height >= 196 && height <= 200)) {
+      $('.success-msg').text('Str 54').show();$('.error-msg').hide();$.cookie('mysize', $('.success-msg').text(), { expires : 7 });$('.mysize').text($.cookie("mysize"));
+    } else if ((weight >= 90 && weight <= 94) && (height >= 170 && height <= 175) || (weight >= 95 && weight <= 99) && (height >= 170 && height <= 195)) {
+      $('.success-msg').text('Str 56').show();$('.error-msg').hide();$.cookie('mysize', $('.success-msg').text(), { expires : 7 });$('.mysize').text($.cookie("mysize"));
     } else {
       $('.success-msg').text('').hide();$('.error-msg').show();$.cookie('mysize', $('.success-msg').text(), { expires : 7 });$('.mysize').text('');
     }
