@@ -17,7 +17,9 @@ $(document).ready(function() {
     $('.swatch-container').removeClass('active');
     $(this).parents('.swatch-container').addClass('active');
   });
-  $('.mysize').text($.cookie("mysize"));
+  if ($.cookie("mysize") != null ){
+    $('.mysize').text($.cookie("mysize")).parents('.iconli').show();
+  }
   function find_size() {
     var weight = $('input#input-type-weight').val();
     var height = $('input#input-type-height').val();
